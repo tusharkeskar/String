@@ -1,0 +1,38 @@
+/*
+Write a program to reverse every word in a string using methods.
+i/p :
+String s1 = "I am a good boy";
+o/p :
+I ma a doog yob
+*/
+
+
+
+import java.util.Iterator;
+import java.util.Arrays;
+public class MyClass 
+{
+	//StartOfMainMethod
+	public static void main(String[] args) 
+	{
+		String s1 = "I am a good boy";
+		myCode(s1);
+	}
+	//EndOfMainMethod
+	private static void myCode(String s1) 
+	{
+		String[] sa=s1.split(" ");
+		for(int i=0;i<sa.length;i++)
+		{
+			String a=sa[i];
+			String b="";
+			for(int j=0;j<a.length();j++)
+			{
+				b=a.charAt(j)+b;
+			}
+			sa[i]=b;
+		}
+		for(int i=0;i<sa.length;i++)
+		System.out.print(sa[i]+" ");
+	}
+}
