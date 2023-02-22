@@ -1,0 +1,43 @@
+/*
+Write a program to compare a given string to the specifiedcharacter sequence.
+i/p :
+String s1="abcd";
+String s2="bacd";
+o/p :
+false
+false
+
+note : check two string are equal or not.
+RestrictedKeyWordsInCode: equals
+*/
+
+
+public class MyClass 
+{
+	//StartOfMainMethod
+	public static void main(String[] args) 
+	{
+		String s1="abcd";
+		String s2="bacd";
+		myCode(s1,s2);
+	}
+	//EndOfMainMethod
+	private static void myCode(String s1,String s2) 
+	{
+		//WriteCode Here
+		System.out.println(myMethod(s1,s2));
+	}
+	private static boolean myMethod(String s1,String s2)
+	{
+		if(s1.length()==s2.length())
+		{
+			for(int i=0;i<s2.length();i++)
+			{
+				if(s1.charAt(i)!=s2.charAt(i))
+				return false;
+			}
+			return true;
+		}
+		return false;
+	}
+}
