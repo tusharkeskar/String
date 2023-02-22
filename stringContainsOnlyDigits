@@ -1,0 +1,33 @@
+/*
+Write a program to test if a given string contains only digits
+i/p :
+String s1 ="1f23";
+o/p
+not contains only digit :
+*/
+
+
+public class MyClass 
+{
+	public static void main(String[] args) 
+	{
+		String s1 ="1f23";
+		myCode(s1);
+	}
+	private static void myCode(String s1) 
+	{
+		System.out.println(myMethod(s1)?"contains only digits":"not contains only digit");
+	}
+	private static boolean myMethod(String s1)
+	{
+		for(int i=0;i<s1.length();i++)
+		{
+			char ch=s1.charAt(i);
+			if(ch<'0')
+			return false;
+			if(ch>'9')
+			return false;
+		}
+		return true;
+	}
+}
