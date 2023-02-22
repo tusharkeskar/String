@@ -1,0 +1,63 @@
+/*
+Write a program to find the second most frequent character in a givenstring.
+i/p : 
+aaabbc
+o/p :
+b 2
+*/
+
+
+
+import java.util.Arrays;
+import java.util.Iterator;
+public class MyClass 
+{
+	//StartOfMainMethod
+	public static void main(String[] args) 
+	{
+		String s1 = "abcad";
+		myCode(s1);
+	}
+	//EndOfMainMethod
+	private static void myCode(String s1) 
+	{
+		int max=Integer.MIN_VALUE;
+		int smax=Integer.MIN_VALUE;
+		//char maxChar='0';
+		char smaxChar='0';
+		for(int i=0;i<s1.length();i++)
+		{
+			int count=0;
+			for(int j=0;j<i;j++)
+			{
+				if(s1.charAt(i)==s1.charAt(j))
+				count++;
+			}
+			if(count==0)
+			{
+				int freq=findFreq(s1.charAt(i), s1);
+				if(freq>max)
+				{
+					max=freq;
+					//maxChar=s1.charAt(i);
+				}
+				if(freq!=max && freq>smax)
+				{
+					smax=freq;
+					smaxChar=s1.charAt(i);
+				}
+			}
+		}
+		System.out.println(smaxChar+" "+smax);
+	}
+	private static int findFreq(char ch, String s1)
+	{
+		int count=0;
+		for(int i=0;i<s1.length();i++)
+		{
+			if(s1.charAt(i)==ch)
+			count++;
+		}
+		return count;
+	}
+}
